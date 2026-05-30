@@ -95,9 +95,6 @@
             cursor: pointer;
             transition: background 0.2s;
             white-space: nowrap;
-            text-decoration: none;
-            display: inline-block;
-            text-align: center;
         }
 
         .btn-scan:hover {
@@ -200,7 +197,7 @@
     
     <div class="rewards-list">
 
-        <!-- 1. Значок клоуна (РЕКЛАМНАЯ ССЫЛКА) -->
+        <!-- 1. Значок клоуна -->
         <div class="card">
             <div class="card-info">
                 <img src="13.jpg" class="reward-img" alt="Награда">
@@ -209,10 +206,10 @@
                     <div class="reward-type">Награда #1</div>
                 </div>
             </div>
-            <a href="https://shrinkme.click/2AH8Gvm" target="_blank" class="btn-scan">ОТКРЫТЬ QR</a>
+            <button class="btn-scan" onclick="openQR('Значок клоуна', '13eenshot_20260529_185334_TikTok.jpg')">ОТКРЫТЬ QR</button>
         </div>
 
-        <!-- 2. Яйцо годзиллы (РЕКЛАМНАЯ ССЫЛКА) -->
+        <!-- 2. Яйцо годзиллы -->
         <div class="card">
             <div class="card-info">
                 <img src="12.jpg" class="reward-img" alt="Награда">
@@ -221,10 +218,10 @@
                     <div class="reward-type">Награда #2</div>
                 </div>
             </div>
-            <a href="https://shrinkme.click/c2lIw" target="_blank" class="btn-scan">ОТКРЫТЬ QR</a>
+            <button class="btn-scan" onclick="openQR('Яйцо годзиллы', '12enshot_20260529_185349_TikTok.jpg')">ОТКРЫТЬ QR</button>
         </div>
 
-        <!-- 3. Спрэй пергамент (РЕКЛАМНАЯ ССЫЛКА) -->
+        <!-- 3. Спрэй пергамент -->
         <div class="card">
             <div class="card-info">
                 <img src="11.jpg" class="reward-img" alt="Награда">
@@ -233,7 +230,7 @@
                     <div class="reward-type">Награда #3</div>
                 </div>
             </div>
-            <a href="https://shrinkme.click/HPWR9" target="_blank" class="btn-scan">ОТКРЫТЬ QR</a>
+            <button class="btn-scan" onclick="openQR('Спрэй пергамент', '11nshot_20260529_185405_TikTok.jpg')">ОТКРЫТЬ QR</button>
         </div>
 
         <!-- 4. Иконка W -->
