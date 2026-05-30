@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Brawl Stars Награды</title>
+    <style>
+        html {
+            font-size: 32px; /* Выкручиваем базовый размер на максимум */
+        }
+
+        html, body {
+            width: 100% !important;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            background-color: #0b111e;
+            color: #ffffff;
+            -webkit-text-size-adjust: none !important;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            padding: 20px 15px;
+        }
+
+        h2 {
+            text-align: center;
+            margin: 40px 0 45px 0;
+            color: #00ff88;
+            font-size: 2.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .rewards-list {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: #161f30;
+            border: 3px solid #24344f;
+            border-radius: 24px;
+            padding: 26px 20px; /* Делаем карточки очень высокими и массивными */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            width: 100% !important;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+        }
+
+        .card-info {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            flex: 1;
+        }
+
+        .reward-img {
+            width: 120px; /* Огромные иконки наград */
+            height: 120px;
+            border-radius: 18px;
+            object-fit: cover;
+            background: #0f1622;
+            border: 3px solid #3b4e6b;
+            flex-shrink: 0;
+        }
+
+        .reward-text {
+            flex: 1;
+        }
+
+        .reward-name {
+            font-size: 1.5rem; /* Очень крупное название */
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .reward-type {
+            font-size: 1.1rem;
+            color: #8fa0bc;
+        }
+
+        .btn-scan {
+            background: #00ff88;
+            color: #0b111e;
+            border: none;
+            padding: 22px 30px; /* Огромная кнопка, по которой не промахнешься */
+            border-radius: 18px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background 0.2s;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .btn-scan:hover {
+            background: #00cc6e;
+        }
+
+        .footer-note {
+            text-align: center;
+            color: #8fa0bc;
+            font-size: 1.1rem;
+            margin: 60px auto 40px auto;
+            padding: 20px;
+            width: 100%;
+            line-height: 1.6;
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-content {
+            background: #161f30;
+            padding: 40px;
+            border-radius: 30px;
+            border: 4px solid #00ff88;
+            text-align: center;
+            width: 90%;
+            max-width: 550px;
+            transform: scale(0.8);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-content h3 {
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            color: #fff;
+        }
+
+        .qr-display {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            max-width: 450px;
+            background: white;
+            margin: 0 auto 25px auto;
+            border-radius: 20px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .qr-display img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .btn-close {
+            background: #24344f;
+            color: #fff;
+            border: none;
+            padding: 18px 45px;
+            border-radius: 14px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>🎁 КАТАЛОГ НАГРАД BRAWL</h2>
+    
+    <div class="rewards-list">
+
+        <!-- 1. Значок клоуна -->
+        <div class="card">
+            <div class="card-info">
+                <img src="13.jpg" class="reward-img" alt="Награда">
+                <div class="reward-text">
+                    <div class="reward-name">Значок клоуна</div>
+                    <div class="reward-type">Награда #1</div>
+                </div>
+            </div>
+            <button class="btn-scan" onclick="openQR('Значок клоуна', '13eenshot_20260529_185334_TikTok.jpg')">ОТКРЫТЬ QR</button>
+        </div>
+
+        <!-- 2. Яйцо годзиллы -->
+        <div class="card">
+            <div class="card-info">
+                <img src="12.jpg" class="reward-img" alt="Награда">
+                <div class="reward-text">
+                    <div class="reward-name">Яйцо годзиллы</div>
+                    <div class="reward-type">Награда #2</div>
+                </div>
+            </div>
+            <button class="btn-scan" onclick="openQR('Яйцо годзиллы', '12enshot_20260529_185349_TikTok.jpg')">ОТКРЫТЬ QR</button>
+        </div>
+
+        <!-- 3. Спрэй пергамент -->
+        <div class="card">
+            <div class="card-info">
+                <img src="11.jpg" class="reward-img" alt="Награда">
+                <div class="reward-text">
+                    <div class="reward-name">Спрэй пергамент</div>
+                    <div class="reward-type">Награда #3</div>
+                </div>
+            </div>
+            <button class="btn-scan" onclick="openQR('Спрэй пергамент', '11nshot_20260529_185405_TikTok.jpg')">ОТКРЫТЬ QR</button>
+        </div>
+
+        <!-- 4. Иконка W -->
+        <div class="card">
+            <div class="card-info">
+                <img src="10.jpg" class="reward-img" alt="Награда">
+                <div class="reward-text">
+                    <div class="reward-name">Иконка W</div>
+                    <div class="reward-type">Награда #4</div>
+                </div>
+            </div>
+            <button class="btn-scan" onclick="openQR('Иконка W', '10nshot_20260529_185420_TikTok.jpg')">ОТКРЫТЬ QR</button>
+        </div>
+
+        <!-- 5. Синий значок -->
+        <div class="card">
+            <div class="card-info">
+                <img src="9.jpg" class="reward-img" alt="Награда">
+                <div class="reward-text">
+                    <div class="reward-name">Синий значок</div>
+                    <div class="reward-type">Награда #5</div>
+                </div>
+            </div>
+            <button class="btn-scan" onclick="openQR('Синий значок', '999eenshot_20260529_185430_TikTok.jpg')">ОТКРЫТЬ QR</button>
+        </div>
+
+        <!-- 6. Взрывной мозг -->
+        <div class="card">
+            <div class="card-info">
+                <img src="8.jpg" class="reward-img" alt="Награда">
+                <div class="reward-text">
+                    <div class="reward-name">Взрывной мозг</div>
+                    <div class="reward-type">Награда #6</div>
+                </div>
+            </div>
+            <button class="btn-scan" onclick="openQR('Взрывной мозг', '888eenshot_20260529_185437_TikTok.jpg')">ОТКРЫТЬ QR</button>
+        </div>
+
+        <!-- 7. Иконка пиццы -->
+        <div class="card">
+            <div class="card-info">
+                <img src="7.jpg" class="reward-img" alt="Награда">
+                <div class="reward-text">
+                    <div class="reward-name">Иконка пиццы</div>
+                    <div class="reward-type">Награда #7</div>
+                </div>
+            </div>
+            <button class="btn-scan" onclick="openQR('Иконка пиццы', '7777enshot_20260529_185445_TikTok.jpg')">ОТКРЫТЬ QR</button>
+        </div>
+
+        <!-- 8. Иконка Годзиллы -->
+        <div class="card">
+            <div class="card-info">
+                <img src="6.jpg" class="reward-img" alt="Награда">
+                <div class="reward-text">
+                    <div class="reward-name">Иконка Годзиллы</div>
+                    <div class="reward-type">Награда #8</div>
+                </div>
+            </div>
+            <button class="btn-scan" onclick="openQR('Иконка Годзиллы', '666reenshot_20260529_185453_TikTok.jpg')">ОТКРЫТЬ QR</button>
+        </div>
+
+        <!-- 9. Иконка старый бравл -->
+        <div class="card">
+            <div class="card-info">
+                <img src="5.jpg" class="reward-img" alt="Награда">
+                <div class="reward-text">
+                    <div class="reward-name">Иконка старый бравл</div>
+                    <div class="reward-type">Награда #9</div>
+                </div>
+            </div>
+            <button class="btn-scan" onclick="openQR('Иконка старый бравл', '5555enshot_20260529_185503_TikTok.jpg')">ОТКРЫТЬ QR</button>
+        </div>
+
+        <!-- 10. Значок Серый клоун -->
+        <div class="card">
+            <div class="card-info">
+                <img src="4.jpg" class="reward-img" alt="Награда">
+                <div class="reward-text">
+                    <div class="reward-name">Значок Серый клоун</div>
+                    <div class="reward-type">Награда #10</div>
+                </div>
+            </div>
+            <button class="btn-scan" onclick="openQR('Значок Серый клоун', '44eenshot_20260529_185939_TikTok.jpg')">ОТКРЫТЬ QR</button>
+        </div>
+
+        <!-- 11. Желтый значок со спреем -->
+        <div class="card">
+            <div class="card-info">
+                <img src="3.jpg" class="reward-img" alt="Награда">
+                <div class="reward-text">
+                    <div class="reward-name">Желтый значок со спреем</div>
+                    <div class="reward-type">Награда #11</div>
+                </div>
+            </div>
+            <button class="btn-scan" onclick="openQR('Желтый значок со спреем', '3Screenshot_20260529_185950_TikTok.jpg')">ОТКРЫТЬ QR</button>
+        </div>
+
+        <!-- 12. Значок злой лампочки -->
+        <div class="card">
+            <div class="card-info">
+                <img src="2.jpg" class="reward-img" alt="Награда">
+                <div class="reward-text">
+                    <div class="reward-name">Значок злой лампочки</div>
+                    <div class="reward-type">Награда #12</div>
+                </div>
+            </div>
+            <button class="btn-scan" onclick="openQR('Значок злой лампочки', '2Screenshot_20260529_190003_TikTok.jpg')">ОТКРЫТЬ QR</button>
+        </div>
+
+        <!-- 13. Иконка спайка "окей" -->
+        <div class="card">
+            <div class="card-info">
+                <img src="1.jpg" class="reward-img" alt="Награда">
+                <div class="reward-text">
+                    <div class="reward-name">Иконка спайка "окей"</div>
+                    <div class="reward-type">Награда #13</div>
+                </div>
+            </div>
+            <button class="btn-scan" onclick="openQR('Иконка спайка &quot;окей&quot;', '1Screenshot_20260529_190014_TikTok.jpg')">ОТКРЫТЬ QR</button>
+        </div>
+
+    </div>
+
+    <div class="footer-note">
+        На сайте представлены не все актуальные QR-коды, а также мы НЕ отвечаем за срок действия QR-кода.
+    </div>
+
+    <div class="modal-overlay" id="qrModal">
+        <div class="modal-content">
+            <h3 id="modalTitle">Название</h3>
+            <div class="qr-display">
+                <img id="qrImage" src="" alt="QR Code">
+            </div>
+            <button class="btn-close" onclick="closeQR()">ЗАКРЫТЬ</button>
+        </div>
+    </div>
+
+    <script>
+        function openQR(title, qrFile) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('qrImage').src = qrFile;
+            document.getElementById('qrModal').classList.add('active');
+        }
+
+        function closeQR() {
+            document.getElementById('qrModal').classList.remove('active');
+        }
+    </script>
+
+</body>
+</html>
