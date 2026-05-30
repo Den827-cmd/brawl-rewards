@@ -36,6 +36,13 @@
             letter-spacing: 1px;
         }
 
+        /* Стиль для контейнера рекламы */
+        .ad-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
         .rewards-list {
             display: flex;
             flex-direction: column;
@@ -189,15 +196,28 @@
             font-weight: bold;
             font-size: 0.9rem;
         }
-        
-        .ad-container { margin: 20px auto; text-align: center; min-height: 50px; }
     </style>
 </head>
 <body>
 
     <h2>🎁 КАТАЛОГ НАГРАД BRAWL</h2>
+
+    <!-- Блок рекламы -->
+    <div class="ad-container">
+        <script type="text/javascript">
+            atOptions = {
+                'key' : 'ec6619f5d799bef2560f565771225bd9',
+                'format' : 'iframe',
+                'height' : 50,
+                'width' : 320,
+                'params' : {}
+            };
+        </script>
+        <script type="text/javascript" src="https://www.highperformanceformat.com/ec6619f5d799bef2560f565771225bd9/invoke.js"></script>
+    </div>
     
     <div class="rewards-list">
+
         <!-- 1. Значок клоуна -->
         <div class="card">
             <div class="card-info">
@@ -353,15 +373,11 @@
             </div>
             <button class="btn-scan" onclick="openQR('Иконка спайка &quot;окей&quot;', '1Screenshot_20260529_190014_TikTok.jpg')">ОТКРЫТЬ QR</button>
         </div>
+
     </div>
 
     <div class="footer-note">
         На сайте представлены не все актуальные QR-коды, а также мы НЕ отвечаем за срок действия QR-кода.
-    </div>
-
-    <!-- Реклама внизу страницы -->
-    <div class="ad-container">
-        <div id="container-813fe3f83b8c307ff485fc641abdd0dd"></div>
     </div>
 
     <div class="modal-overlay" id="qrModal">
@@ -385,8 +401,6 @@
             document.getElementById('qrModal').classList.remove('active');
         }
     </script>
-    
-    <script async="async" data-cfasync="false" src="https://pl29592200.effectivecpmnetwork.com/813fe3f83b8c307ff485fc641abdd0dd/invoke.js"></script>
 
 </body>
 </html>
