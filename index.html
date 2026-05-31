@@ -455,7 +455,7 @@
             });
         }
 
-        // Обновленная функция открытия модалки (берет актуальное имя с карточки)
+        // Функция открытия модалки (берет актуальное имя с карточки)
         function openQR(buttonElement, qrFile) {
             const card = buttonElement.closest('.card');
             const currentName = card.querySelector('.reward-name').innerText;
@@ -465,8 +465,11 @@
             document.getElementById('qrModal').classList.add('active');
         }
 
+        // Функция закрытия модалки (с полной очисткой картинки от бага)
         function closeQR() {
             document.getElementById('qrModal').classList.remove('active');
+            // Очищаем src, чтобы старый QR-код не оставался в памяти при следующем открытии
+            document.getElementById('qrImage').src = '';
         }
     </script>
 
