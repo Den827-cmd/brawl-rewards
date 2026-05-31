@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Brawl Stars Награды</title>
+    <title>Brawl Stars Награды / Rewards</title>
     <style>
         html, body {
             width: 100vw !important;
@@ -27,13 +27,40 @@
             padding: 15px;
         }
 
+        /* Шапка с заголовком и переключателем */
+        .header-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin: 15px 0 25px 0;
+        }
+
         h2 {
             text-align: center;
-            margin: 15px 0 25px 0;
             color: #00ff88;
             font-size: 1.6rem;
             text-transform: uppercase;
             letter-spacing: 1px;
+            margin: 0;
+        }
+
+        /* Кнопка переключения языка */
+        .lang-switch {
+            background: #24344f;
+            color: #fff;
+            border: 1px solid #3b4e6b;
+            padding: 6px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+        }
+
+        .lang-switch:hover {
+            background: #3b4e6b;
+            border-color: #00ff88;
         }
 
         /* Стиль для контейнера рекламы */
@@ -200,9 +227,11 @@
 </head>
 <body>
 
-    <h2>🎁 КАТАЛОГ НАГРАД BRAWL</h2>
+    <div class="header-container">
+        <h2 id="mainTitle">🎁 КАТАЛОГ НАГРАД BRAWL</h2>
+        <button class="lang-switch" onclick="toggleLanguage()" id="langBtn">Language: EN</button>
+    </div>
 
-    <!-- Блок рекламы -->
     <div class="ad-container">
         <script type="text/javascript">
             atOptions = {
@@ -216,167 +245,9 @@
         <script type="text/javascript" src="https://www.highperformanceformat.com/ec6619f5d799bef2560f565771225bd9/invoke.js"></script>
     </div>
     
-    <div class="rewards-list">
+    <div class="rewards-list" id="rewardsContainer"></div>
 
-        <!-- 1. Значок клоуна -->
-        <div class="card">
-            <div class="card-info">
-                <img src="13.jpg" class="reward-img" alt="Награда">
-                <div>
-                    <div class="reward-name">Значок клоуна</div>
-                    <div class="reward-type">Награда #1</div>
-                </div>
-            </div>
-            <button class="btn-scan" onclick="openQR('Значок клоуна', '13eenshot_20260529_185334_TikTok.jpg')">ОТКРЫТЬ QR</button>
-        </div>
-
-        <!-- 2. Яйцо годзиллы -->
-        <div class="card">
-            <div class="card-info">
-                <img src="12.jpg" class="reward-img" alt="Награда">
-                <div>
-                    <div class="reward-name">Яйцо годзиллы</div>
-                    <div class="reward-type">Награда #2</div>
-                </div>
-            </div>
-            <button class="btn-scan" onclick="openQR('Яйцо годзиллы', '12enshot_20260529_185349_TikTok.jpg')">ОТКРЫТЬ QR</button>
-        </div>
-
-        <!-- 3. Спрэй пергамент -->
-        <div class="card">
-            <div class="card-info">
-                <img src="11.jpg" class="reward-img" alt="Награда">
-                <div>
-                    <div class="reward-name">Спрэй пергамент</div>
-                    <div class="reward-type">Награда #3</div>
-                </div>
-            </div>
-            <button class="btn-scan" onclick="openQR('Спрэй пергамент', '11nshot_20260529_185405_TikTok.jpg')">ОТКРЫТЬ QR</button>
-        </div>
-
-        <!-- 4. Иконка W -->
-        <div class="card">
-            <div class="card-info">
-                <img src="10.jpg" class="reward-img" alt="Награда">
-                <div>
-                    <div class="reward-name">Иконка W</div>
-                    <div class="reward-type">Награда #4</div>
-                </div>
-            </div>
-            <button class="btn-scan" onclick="openQR('Иконка W', '10nshot_20260529_185420_TikTok.jpg')">ОТКРЫТЬ QR</button>
-        </div>
-
-        <!-- 5. Синий значок -->
-        <div class="card">
-            <div class="card-info">
-                <img src="9.jpg" class="reward-img" alt="Награда">
-                <div>
-                    <div class="reward-name">Синий значок</div>
-                    <div class="reward-type">Награда #5</div>
-                </div>
-            </div>
-            <button class="btn-scan" onclick="openQR('Синий значок', '999eenshot_20260529_185430_TikTok.jpg')">ОТКРЫТЬ QR</button>
-        </div>
-
-        <!-- 6. Взрывной мозг -->
-        <div class="card">
-            <div class="card-info">
-                <img src="8.jpg" class="reward-img" alt="Награда">
-                <div>
-                    <div class="reward-name">Взрывной мозг</div>
-                    <div class="reward-type">Награда #6</div>
-                </div>
-            </div>
-            <button class="btn-scan" onclick="openQR('Взрывной мозг', '888eenshot_20260529_185437_TikTok.jpg')">ОТКРЫТЬ QR</button>
-        </div>
-
-        <!-- 7. Иконка пиццы -->
-        <div class="card">
-            <div class="card-info">
-                <img src="7.jpg" class="reward-img" alt="Награда">
-                <div>
-                    <div class="reward-name">Иконка пиццы</div>
-                    <div class="reward-type">Награда #7</div>
-                </div>
-            </div>
-            <button class="btn-scan" onclick="openQR('Иконка пиццы', '7777enshot_20260529_185445_TikTok.jpg')">ОТКРЫТЬ QR</button>
-        </div>
-
-        <!-- 8. Иконка Годзиллы -->
-        <div class="card">
-            <div class="card-info">
-                <img src="6.jpg" class="reward-img" alt="Награда">
-                <div>
-                    <div class="reward-name">Иконка Годзиллы</div>
-                    <div class="reward-type">Награда #8</div>
-                </div>
-            </div>
-            <button class="btn-scan" onclick="openQR('Иконка Годзиллы', '666reenshot_20260529_185453_TikTok.jpg')">ОТКРЫТЬ QR</button>
-        </div>
-
-        <!-- 9. Иконка старый бравл -->
-        <div class="card">
-            <div class="card-info">
-                <img src="5.jpg" class="reward-img" alt="Награда">
-                <div>
-                    <div class="reward-name">Иконка старый бравл</div>
-                    <div class="reward-type">Награда #9</div>
-                </div>
-            </div>
-            <button class="btn-scan" onclick="openQR('Иконка старый бравл', '5555enshot_20260529_185503_TikTok.jpg')">ОТКРЫТЬ QR</button>
-        </div>
-
-        <!-- 10. Значок Серый клоун -->
-        <div class="card">
-            <div class="card-info">
-                <img src="4.jpg" class="reward-img" alt="Награда">
-                <div>
-                    <div class="reward-name">Значок Серый клоун</div>
-                    <div class="reward-type">Награда #10</div>
-                </div>
-            </div>
-            <button class="btn-scan" onclick="openQR('Значок Серый клоун', '44eenshot_20260529_185939_TikTok.jpg')">ОТКРЫТЬ QR</button>
-        </div>
-
-        <!-- 11. Желтый значок со спреем -->
-        <div class="card">
-            <div class="card-info">
-                <img src="3.jpg" class="reward-img" alt="Награда">
-                <div>
-                    <div class="reward-name">Желтый значок со спреем</div>
-                    <div class="reward-type">Награда #11</div>
-                </div>
-            </div>
-            <button class="btn-scan" onclick="openQR('Желтый значок со спреем', '3Screenshot_20260529_185950_TikTok.jpg')">ОТКРЫТЬ QR</button>
-        </div>
-
-        <!-- 12. Значок злой лампочки -->
-        <div class="card">
-            <div class="card-info">
-                <img src="2.jpg" class="reward-img" alt="Награда">
-                <div>
-                    <div class="reward-name">Значок злой лампочки</div>
-                    <div class="reward-type">Награда #12</div>
-                </div>
-            </div>
-            <button class="btn-scan" onclick="openQR('Значок злой лампочки', '2Screenshot_20260529_190003_TikTok.jpg')">ОТКРЫТЬ QR</button>
-        </div>
-
-        <!-- 13. Иконка спайка "окей" -->
-        <div class="card">
-            <div class="card-info">
-                <img src="1.jpg" class="reward-img" alt="Награда">
-                <div>
-                    <div class="reward-name">Иконка спайка "окей"</div>
-                    <div class="reward-type">Награда #13</div>
-                </div>
-            </div>
-            <button class="btn-scan" onclick="openQR('Иконка спайка &quot;окей&quot;', '1Screenshot_20260529_190014_TikTok.jpg')">ОТКРЫТЬ QR</button>
-        </div>
-
-    </div>
-
-    <div class="footer-note">
+    <div class="footer-note" id="footerNote">
         На сайте представлены не все актуальные QR-коды, а также мы НЕ отвечаем за срок действия QR-кода.
     </div>
 
@@ -386,11 +257,92 @@
             <div class="qr-display">
                 <img id="qrImage" src="" alt="QR Code">
             </div>
-            <button class="btn-close" onclick="closeQR()">ЗАКРЫТЬ</button>
+            <button class="btn-close" id="btnClose" onclick="closeQR()">ЗАКРЫТЬ</button>
         </div>
     </div>
 
     <script>
+        // База данных наград на двух языках
+        const rewardsData = [
+            { id: 1, img: "13.jpg", qr: "13eenshot_20260529_185334_TikTok.jpg", name_ru: "Значок клоуна", name_en: "Clown Pin" },
+            { id: 2, img: "12.jpg", qr: "12enshot_20260529_185349_TikTok.jpg", name_ru: "Яйцо годзиллы", name_en: "Godzilla Egg" },
+            { id: 3, img: "11.jpg", qr: "11nshot_20260529_185405_TikTok.jpg", name_ru: "Спрэй пергамент", name_en: "Parchment Spray" },
+            { id: 4, img: "10.jpg", qr: "10nshot_20260529_185420_TikTok.jpg", name_ru: "Иконка W", name_en: "W Icon" },
+            { id: 5, img: "9.jpg",  qr: "999eenshot_20260529_185430_TikTok.jpg", name_ru: "Синий значок", name_en: "Blue Pin" },
+            { id: 6, img: "8.jpg",  qr: "888eenshot_20260529_185437_TikTok.jpg", name_ru: "Взрывной мозг", name_en: "Exploding Brain" },
+            { id: 7, img: "7.jpg",  qr: "7777enshot_20260529_185445_TikTok.jpg", name_ru: "Иконка пиццы", name_en: "Pizza Icon" },
+            { id: 8, img: "6.jpg",  qr: "666reenshot_20260529_185453_TikTok.jpg", name_ru: "Иконка Годзиллы", name_en: "Godzilla Icon" },
+            { id: 9, img: "5.jpg",  qr: "5555enshot_20260529_185503_TikTok.jpg", name_ru: "Иконка старый бравл", name_en: "Old Brawl Icon" },
+            { id: 10, img: "4.jpg", qr: "44eenshot_20260529_185939_TikTok.jpg", name_ru: "Значок Серый клоун", name_en: "Gray Clown Pin" },
+            { id: 11, img: "3.jpg", qr: "3Screenshot_20260529_185950_TikTok.jpg", name_ru: "Желтый значок со спреем", name_en: "Yellow Spray Pin" },
+            { id: 12, img: "2.jpg", qr: "2Screenshot_20260529_190003_TikTok.jpg", name_ru: "Значок злой лампочки", name_en: "Angry Lightbulb Pin" },
+            { id: 13, img: "1.jpg", qr: "1Screenshot_20260529_190014_TikTok.jpg", name_ru: "Иконка спайка \"окей\"", name_en: "Spike \"OK\" Icon" }
+        ];
+
+        // Текстовые переводы интерфейса
+        const translations = {
+            ru: {
+                title: "🎁 КАТАЛОГ НАГРАД BRAWL",
+                rewardType: "Награда",
+                btnScan: "ОТКРЫТЬ QR",
+                btnClose: "ЗАКРЫТЬ",
+                footer: "На сайте представлены не все актуальные QR-коды, а также мы НЕ отвечаем за срок действия QR-кода.",
+                langBtn: "Language: EN"
+            },
+            en: {
+                title: "🎁 BRAWL REWARDS CATALOG",
+                rewardType: "Reward",
+                btnScan: "OPEN QR",
+                btnClose: "CLOSE",
+                footer: "The site does not feature all current QR codes, and we are NOT responsible for the expiration date of the QR codes.",
+                langBtn: "Язык: RU"
+            }
+        };
+
+        let currentLang = 'ru'; // Язык по умолчанию
+
+        // Функция рендеринга списка карточек
+        function renderCards() {
+            const container = document.getElementById('rewardsContainer');
+            container.innerHTML = ''; // Очищаем список перед новой отрисовкой
+
+            rewardsData.forEach(item => {
+                const name = currentLang === 'ru' ? item.name_ru : item.name_en;
+                const typeText = currentLang === 'ru' ? `${translations.ru.rewardType} #${item.id}` : `${translations.en.rewardType} #${item.id}`;
+                const btnText = translations[currentLang].btnScan;
+
+                const cardHtml = `
+                    <div class="card">
+                        <div class="card-info">
+                            <img src="${item.img}" class="reward-img" alt="Reward">
+                            <div>
+                                <div class="reward-name">${name}</div>
+                                <div class="reward-type">${typeText}</div>
+                            </div>
+                        </div>
+                        <button class="btn-scan" onclick="openQR('${name.replace(/'/g, "\\'")}', '${item.qr}')">${btnText}</button>
+                    </div>
+                `;
+                container.innerHTML += cardHtml;
+            });
+        }
+
+        // Функция перевода статического текста страницы
+        function updateInterfaceText() {
+            document.getElementById('mainTitle').innerText = translations[currentLang].title;
+            document.getElementById('footerNote').innerText = translations[currentLang].footer;
+            document.getElementById('langBtn').innerText = translations[currentLang].langBtn;
+            document.getElementById('btnClose').innerText = translations[currentLang].btnClose;
+        }
+
+        // Переключатель языка
+        function toggleLanguage() {
+            currentLang = currentLang === 'ru' ? 'en' : 'ru';
+            updateInterfaceText();
+            renderCards();
+        }
+
+        // Функции модального окна
         function openQR(title, qrFile) {
             document.getElementById('modalTitle').innerText = title;
             document.getElementById('qrImage').src = qrFile;
@@ -400,6 +352,10 @@
         function closeQR() {
             document.getElementById('qrModal').classList.remove('active');
         }
+
+        // Первичная инициализация страницы при загрузке
+        updateInterfaceText();
+        renderCards();
     </script>
 
 </body>
